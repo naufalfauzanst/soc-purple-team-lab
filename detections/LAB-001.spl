@@ -1,0 +1,15 @@
+index=windows_endpoint host="SOC-ENDPOINT-01"
+source="XmlWinEventLog:Microsoft-Windows-Sysmon/Operational"
+earliest=-10m latest=now "sftp-server.exe"
+| rex field=_raw "<EventID[^>]*>(?<event_id>\d+)</EventID>"
+| rex field=_raw "<EventRecordID>(?<record_id>\d+)</EventRecordID>"
+| rex field=_raw "<Data Name='User'>(?<user>[^<]+)</Data>"
+| rex field=_raw "<Data Name='Image'>(?<process_path>[^<]+)</Data>"
+| rex field=_raw "<Data Name='ParentImage'>(?<parent_process>[^<]+)</Data>"
+| rex field=_raw "<Data Name='CommandLine'>(?<command>[^<]+)</Data>"
+| where event_id="1"
+    AND match(lower(process_path),"\\\\sftp-server\.exe$")
+| dedup host source record_id
+| eval detection_name="Windows SFTP Server Process Started"
+| table _time host user process_path parent_process command detection_name
+| sort - _time
