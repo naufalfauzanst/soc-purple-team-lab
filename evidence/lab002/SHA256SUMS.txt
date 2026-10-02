@@ -1,0 +1,4 @@
+037d2d216c025fc9916a1aead938537c3081d1407a97e07f43277e208c6eae99  evidence/lab002/live-alert.png
+a231d61f4997c5b9200660db38838f822554ec9973dc23afe999fdf354e69be9  evidence/lab002/rule-tests.png
+061a6b52943d27a05b122b52340c3f5b4490d659eafb3d54bfc4cf4163501cbf  evidence/lab002/detection-transcript.redacted.json
+99b44f1bb3725c0d2e1eaa279e4a5d83fdef7f2b67438bed7fd820932eaa527d  detections/LAB-002.yaml

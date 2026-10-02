@@ -1,3 +1,5 @@
 * text=auto
 *.png binary
 evidence/synthetic/*.csv -text
+detections/LAB-002.yaml -text
+evidence/lab002/*.json -text

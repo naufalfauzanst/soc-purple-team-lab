@@ -1,0 +1,32 @@
+detect:
+  event: NEW_PROCESS
+  op: and
+  rules:
+    - case sensitive: false
+      op: ends with
+      path: event/FILE_PATH
+      value: \notepad.exe
+    - case sensitive: false
+      op: contains
+      path: event/COMMAND_LINE
+      value: C:\SOC-Lab\edr-demo.txt
+respond:
+  - action: report
+    name: LAB-002 Notepad Demo Process Started
+tests:
+  match:
+    - - event:
+          COMMAND_LINE: '"C:\WINDOWS\system32\notepad.exe" C:\SOC-Lab\edr-demo.txt'
+          FILE_PATH: >-
+            C:\Program
+            Files\WindowsApps\Microsoft.WindowsNotepad_11.2607.14.0_x64__8wekyb3d8bbwe\Notepad\Notepad.exe
+        routing:
+          event_type: NEW_PROCESS
+  non_match:
+    - - event:
+          COMMAND_LINE: '"C:\WINDOWS\system32\notepad.exe"'
+          FILE_PATH: >-
+            C:\Program
+            Files\WindowsApps\Microsoft.WindowsNotepad_11.2607.14.0_x64__8wekyb3d8bbwe\Notepad\Notepad.exe
+        routing:
+          event_type: NEW_PROCESS

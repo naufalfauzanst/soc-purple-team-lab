@@ -1,8 +1,10 @@
 # SOC Purple Team Lab
 
-A documented SOC L1 investigation of authorized Windows SSH access and a synthetic file transfer. The exercise connects operator actions to authentication logs, network traffic, endpoint processes, a scheduled SIEM alert, and a case disposition.
+Documented SOC L1 investigations of authorized Windows SSH/SFTP activity and LimaCharlie EDR process detection. The exercise connects operator actions to authentication logs, network traffic, endpoint processes, a scheduled SIEM alert, and a case disposition.
 
-**Completed case:** [SOC-L1-001: SSH access and synthetic file transfer](cases/SOC-L1-001-ssh-file-transfer.md). Conducted on 2 October 2026 by Naufal.
+**SSH/SFTP case:** [SOC-L1-001: SSH access and synthetic file transfer](cases/SOC-L1-001-ssh-file-transfer.md). Conducted on 2 October 2026 by Naufal.
+
+**EDR case:** [SOC-L1-002: EDR process detection validation](cases/SOC-L1-002-edr-notepad.md). Two synthetic rule tests passed, and a live Notepad launch generated LAB-002.
 
 ## Observed results
 
@@ -38,6 +40,15 @@ Wireshark ran on the host's Ethernet 3 interface. The VM also had NAT for instal
 - [Evidence provenance and SHA-256 manifest](evidence/README.md).
 - [Reusable L1 ticket](templates/l1-ticket.md).
 
+## EDR extension
+
+The existing Windows VM was onboarded to LimaCharlie. The analyst inspected process/account/parent context, validated match and non-match fixtures, reviewed a live detection, and documented benign authorized activity. This case validates reporting, not file-read monitoring or containment.
+
+- [LAB-002 rule documentation](detections/LAB-002.md) and [export with test fixtures](detections/LAB-002.yaml).
+- [EDR process triage playbook](playbooks/edr-process-triage.md).
+- [LimaCharlie lab guide](lab/edr-limacharlie.md).
+- [LAB-002 evidence inventory](evidence/lab002/README.md).
+
 ## SOC L1 skills demonstrated
 
 The case demonstrates alert review, authentication/process/network correlation, timezone handling, evidence integrity checks, an authorization-based disposition, escalation criteria, and a written handover. Screenshots and transcripts distinguish observed facts from assumptions. Raw captures stay local and are excluded from Git.
@@ -47,6 +58,6 @@ The case demonstrates alert review, authentication/process/network correlation, 
 - Investigate the difference between Splunk `_time` and embedded Sysmon `UtcTime` for Event ID 3.
 - Forward OpenSSH Operational logs to the SIEM and validate parsing.
 - Test benign and suspicious contexts and detection gaps; validate suppression across overlapping schedules.
-- Add Wazuh or Microsoft Sentinel integration and an endpoint response exercise. These integrations and EDR isolation are not implemented in this case. Sysmon is telemetry, not an EDR product.
+- Add Wazuh or Microsoft Sentinel integration and an endpoint response exercise. Wazuh/Sentinel integrations and EDR isolation are not implemented. LimaCharlie process telemetry and report-only detection are now validated in SOC-L1-002. Sysmon is telemetry, not an EDR product.
 
 Related work: [Splunk detection lab](https://github.com/naufalfauzanst/soc-splunk-detection-lab) and [phishing investigation lab](https://github.com/naufalfauzanst/soc-phishing-investigation-lab).
