@@ -1,0 +1,27 @@
+{
+  "BASE_ADDRESS": 140698413367296,
+  "COMMAND_LINE": "\"C:\\WINDOWS\\system32\\HOSTNAME.EXE\"",
+  "FILE_IS_SIGNED": 1,
+  "FILE_PATH": "C:\\WINDOWS\\system32\\HOSTNAME.EXE",
+  "HASH": "22ec2260b5c32177f7d14a33975e1005988bba0df3427cc8b47cec671d3f2a1f",
+  "MEMORY_USAGE": 6504448,
+  "PARENT": {
+    "BASE_ADDRESS": 140698545422336,
+    "COMMAND_LINE": "\"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\" ",
+    "FILE_IS_SIGNED": 1,
+    "FILE_PATH": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+    "HASH": "8bb6fa8c283b4d92120b1ef249a9b311b0f804d4cabbe9981159976c8be76a5e",
+    "MEMORY_USAGE": 2633728,
+    "PARENT_ATOM": "f2b97af14d587891533428036ac0793e",
+    "PARENT_PROCESS_ID": 4480,
+    "PROCESS_ID": 1444,
+    "THIS_ATOM": "23b8e16f6f6af253c396ba856ac079b1",
+    "THREADS": 1,
+    "TIMESTAMP": 1790998960763,
+    "USER_NAME": "SOC-ENDPOINT-01\\naufal"
+  },
+  "PARENT_PROCESS_ID": 1444,
+  "PROCESS_ID": 3488,
+  "THREADS": 3,
+  "USER_NAME": "SOC-ENDPOINT-01\\naufal"
+}

@@ -10,6 +10,8 @@ Documented SOC L1 investigations of authorized Windows SSH/SFTP activity and Lim
 
 **Network response case:** [SOC-L1-004: Controlled isolation and release](cases/SOC-L1-004-edr-network-isolation.md). Fixed-IP checks supported connection blocking during reported isolation and recovery after release.
 
+**Existing-rule triage case:** [SOC-L1-005: Hostname alert investigation](cases/SOC-L1-005-hostname-alert-triage.md). The analyst reviewed a third-party rule and closed operator-confirmed lab activity without unnecessary containment.
+
 ## Observed results
 
 | Evidence | Result | What it establishes |
@@ -66,6 +68,13 @@ LAB-004 tested manual isolation and release on the owned VM. The operator report
 
 - [Isolation guide](lab/edr-network-isolation.md).
 - [LAB-004 evidence](evidence/lab004/README.md).
+
+## Existing-rule investigation
+
+LAB-005 demonstrates the distinction between a matched behavior and malicious intent. It attributes the existing Sigma-derived rule, records account/parent context and operator confirmation, and documents a benign-authorized disposition. No custom LAB-005 rule or suppression was created.
+
+- [Rule review and attribution](detections/LAB-005-rule-review.md).
+- [LAB-005 evidence](evidence/lab005/README.md).
 
 ## SOC L1 skills demonstrated
 
