@@ -1,0 +1,23 @@
+{
+  "FILE_IS_SIGNED": 1,
+  "FILE_PATH": "\\Device\\HarddiskVolume3\\Windows\\System32\\svchost.exe",
+  "HASH": "1222a44a5fdb4efde4dfcb41093648627950e7ec02d8667f1c26ccae31d922e2",
+  "MEMORY_USAGE": 17002496,
+  "PARENT": {
+    "FILE_IS_SIGNED": 1,
+    "FILE_PATH": "\\Device\\HarddiskVolume3\\Windows\\System32\\services.exe",
+    "HASH": "ea75ad4d7c72a25d7284311e33b8f31a89aa35a779e1ad9b2c81af4fde45af5b",
+    "MEMORY_USAGE": 11378688,
+    "PARENT_ATOM": "4b53d1d311a324fb3713868e6ac0791e",
+    "PARENT_PROCESS_ID": 692,
+    "PROCESS_ID": 832,
+    "THIS_ATOM": "5c4933b33a852b9c0e79b29e6ac0791e",
+    "THREADS": 9,
+    "TIMESTAMP": 1790998814779,
+    "USER_NAME": "NT AUTHORITY\\SYSTEM"
+  },
+  "PARENT_PROCESS_ID": 832,
+  "PROCESS_ID": 3168,
+  "THREADS": 30,
+  "USER_NAME": "NT AUTHORITY\\SYSTEM"
+}

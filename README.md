@@ -88,3 +88,11 @@ The case demonstrates alert review, authentication/process/network correlation, 
 - Add Wazuh or Microsoft Sentinel integration and extend response verification with action audits and scoped network coverage. Wazuh/Sentinel integrations are not implemented; manual isolation/release of a tested connection is documented in SOC-L1-004. LimaCharlie process telemetry and report-only detection are validated in SOC-L1-002; manual process termination is validated in SOC-L1-003. Sysmon is telemetry, not an EDR product.
 
 Related work: [Splunk detection lab](https://github.com/naufalfauzanst/soc-splunk-detection-lab) and [phishing investigation lab](https://github.com/naufalfauzanst/soc-phishing-investigation-lab).
+
+
+## False-positive investigation
+
+[SOC-L1-006: Svchost masquerading alert triage](cases/SOC-L1-006-svchost-false-positive.md) documents a device-path mismatch in an existing rule. Volume mapping, a valid current-file signature, and a matching SHA-256 support a false-positive disposition for the investigated event. No suppression or rule modification was applied.
+
+- [Existing-rule review](detections/LAB-006-rule-review.md).
+- [LAB-006 evidence and integrity manifest](evidence/lab006/README.md).
