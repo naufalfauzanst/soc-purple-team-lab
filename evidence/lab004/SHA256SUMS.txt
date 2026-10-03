@@ -1,0 +1,3 @@
+9c67149e6366f1855863b9e5c36abac7b68c0ca78106cb0702553e6109785c2b  evidence/lab004/LAB-004-fixed-ip-validation.png
+4a6e26f684a5f33eab9b007dbaa8eac9e8ce7a3dbf15b3b614d5e4b53a771583  evidence/lab004/LAB-004-network-before-isolation.png
+5aec6458af606cc4855e6141b9a8099a861dd38f752d94d02db904f7786f06fb  evidence/lab004/LAB-004-network-during-isolation.png

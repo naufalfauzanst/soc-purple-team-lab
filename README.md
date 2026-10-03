@@ -8,6 +8,8 @@ Documented SOC L1 investigations of authorized Windows SSH/SFTP activity and Lim
 
 **EDR response case:** [SOC-L1-003: Controlled process termination](cases/SOC-L1-003-edr-process-response.md). A manual response returned error 0 for the target, and local checks confirmed no Notepad processes remained at verification time.
 
+**Network response case:** [SOC-L1-004: Controlled isolation and release](cases/SOC-L1-004-edr-network-isolation.md). Fixed-IP checks supported connection blocking during reported isolation and recovery after release.
+
 ## Observed results
 
 | Evidence | Result | What it establishes |
@@ -58,6 +60,13 @@ LAB-003 validates manual termination of a designated Notepad process through EDR
 - [Response exercise guide](lab/edr-process-response.md).
 - [LAB-003 evidence](evidence/lab003/README.md).
 
+## Network isolation extension
+
+LAB-004 tested manual isolation and release on the owned VM. The operator reported True/False/True for a fixed TCP destination; retained evidence shows isolated failure and post-release recovery. Broad network coverage and full action audit metadata were not established.
+
+- [Isolation guide](lab/edr-network-isolation.md).
+- [LAB-004 evidence](evidence/lab004/README.md).
+
 ## SOC L1 skills demonstrated
 
 The case demonstrates alert review, authentication/process/network correlation, timezone handling, evidence integrity checks, an authorization-based disposition, escalation criteria, and a written handover. Screenshots and transcripts distinguish observed facts from assumptions. Raw captures stay local and are excluded from Git.
@@ -67,6 +76,6 @@ The case demonstrates alert review, authentication/process/network correlation, 
 - Investigate the difference between Splunk `_time` and embedded Sysmon `UtcTime` for Event ID 3.
 - Forward OpenSSH Operational logs to the SIEM and validate parsing.
 - Test benign and suspicious contexts and detection gaps; validate suppression across overlapping schedules.
-- Add Wazuh or Microsoft Sentinel integration and a separately scoped network-isolation exercise. Wazuh/Sentinel integrations and EDR isolation are not implemented. LimaCharlie process telemetry and report-only detection are validated in SOC-L1-002; manual process termination is validated in SOC-L1-003. Sysmon is telemetry, not an EDR product.
+- Add Wazuh or Microsoft Sentinel integration and extend response verification with action audits and scoped network coverage. Wazuh/Sentinel integrations are not implemented; manual isolation/release of a tested connection is documented in SOC-L1-004. LimaCharlie process telemetry and report-only detection are validated in SOC-L1-002; manual process termination is validated in SOC-L1-003. Sysmon is telemetry, not an EDR product.
 
 Related work: [Splunk detection lab](https://github.com/naufalfauzanst/soc-splunk-detection-lab) and [phishing investigation lab](https://github.com/naufalfauzanst/soc-phishing-investigation-lab).
