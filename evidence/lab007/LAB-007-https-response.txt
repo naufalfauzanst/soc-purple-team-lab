@@ -1,0 +1,15 @@
+Provenance: transcript of command and output supplied by the operator in chat; not a direct terminal export.
+
+PS C:\WINDOWS\system32> curl.exe --http1.1 -I https://example.com
+HTTP/1.1 200 OK
+Date: Sun, 04 Oct 2026 14:49:32 GMT
+Content-Type: text/html; charset=utf-8
+Connection: keep-alive
+Server: cloudflare
+last-modified: Sun, 04 Oct 2026 07:03:47 GMT
+allow: GET, HEAD
+Accept-Ranges: bytes
+Age: 7
+cf-cache-status: HIT
+CF-RAY: a454fe6a0cfdce4b-SIN
+alt-svc: h3=":443"; ma=86400

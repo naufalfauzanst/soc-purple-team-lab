@@ -8,3 +8,6 @@ evidence/lab005/*.json -text
 
 evidence/lab006/*.json -text
 evidence/lab006/*.yaml -text
+
+evidence/lab007/*.txt -text
+evidence/lab007/*.tsv -text

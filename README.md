@@ -96,3 +96,10 @@ Related work: [Splunk detection lab](https://github.com/naufalfauzanst/soc-splun
 
 - [Existing-rule review](detections/LAB-006-rule-review.md).
 - [LAB-006 evidence and integrity manifest](evidence/lab006/README.md).
+
+## Network analysis baseline
+
+[SOC-L1-007: DNS, TCP, and TLS baseline analysis](cases/SOC-L1-007-network-baseline.md) documents DNS answers, a TCP reachability test, and a separate HTTPS/TLS session. An offline review verified 20 packets in the selected TLS capture; the raw capture remains local. Host-side NAT limits VM attribution. No IDS deployment or alert was validated.
+
+- [Network baseline guide](lab/network-baseline.md).
+- [LAB-007 evidence and integrity manifest](evidence/lab007/README.md).
